@@ -13,5 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'slim'
+gem 'twitter-bootstrap-rails'
+gem 'therubyracer'
 
 gem 'spring',        group: :development
