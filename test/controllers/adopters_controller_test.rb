@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class AdoptersControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
 
-  test "index should assigns adopters" do
-    get :index
-    assert_not_nil assigns(:adopters)
+  context "get #index" do
+    setup do
+      get :index
+    end
+
+    should "return HTTP success" do
+      assert_response :success
+    end
+
+    should "assigns adopters" do
+      assert_not_nil assigns(:adopters)
+    end
   end
 end

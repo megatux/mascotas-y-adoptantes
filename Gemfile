@@ -17,3 +17,7 @@ gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 
 gem 'spring',        group: :development
+
+group :test do
+	gem 'shoulda-context'
+end
