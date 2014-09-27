@@ -18,6 +18,12 @@ gem 'therubyracer'
 
 gem 'spring',        group: :development
 
+group :development do
+  gem 'libnotify'
+  gem 'guard-minitest'
+  gem 'guard-bundler'
+end
+
 group :test do
 	gem 'shoulda-context'
 end
