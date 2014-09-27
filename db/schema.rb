@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922010847) do
+ActiveRecord::Schema.define(version: 20140927210302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20140922010847) do
   create_table "adopters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "score"
+    t.text     "description"
+    t.text     "address"
   end
+
+  add_index "adopters", ["name"], name: "index_adopters_on_name", using: :btree
+  add_index "adopters", ["score"], name: "index_adopters_on_score", using: :btree
 
 end
