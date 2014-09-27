@@ -12,7 +12,14 @@ class AdoptersControllerTest < ActionController::TestCase
     end
 
     should "assigns adopters" do
-      assert_not_nil assigns(:adopters)
+      refute_nil assigns(:adopters)
+    end
+
+    context "with some adopters" do
+      should "list them" do
+        adopters = assigns(:adopters)
+        assert_equal(2, adopters.length)
+      end
     end
   end
 end

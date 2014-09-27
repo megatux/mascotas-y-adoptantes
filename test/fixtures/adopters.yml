@@ -1,0 +1,10 @@
+jorge:
+  name: Jorge
+  description: mal tipo
+  score: 3
+  address: zona vicente lopez
+pablo:
+  name: Pablo Lopez
+  description: re mal tipo
+  score: 2
+  address: zona microcentro
