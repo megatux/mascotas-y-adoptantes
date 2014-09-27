@@ -2,6 +2,10 @@ require 'test_helper'
 
 class AdoptersControllerTest < ActionController::TestCase
 
+  should "defined the index route" do
+    assert_recognizes({controller: 'adopters', action: 'index'}, 'adopters')
+  end
+
   context "get #index" do
     setup do
       get :index
