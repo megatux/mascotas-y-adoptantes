@@ -14,5 +14,9 @@ class HomeControllerTest < ActionController::TestCase
     should "return HTTP success" do
       assert_response :success
     end
+
+    should "assigns top worse adopters" do
+      refute_nil assigns(:adopters)
+    end
   end
 end

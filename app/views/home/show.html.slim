@@ -1,0 +1,19 @@
+- @adopters.each do |adopter|
+
+.page-header
+  h1=t '.title', :default => 'Los peores'
+
+.col-md-10
+  .row
+    table.table.table-striped
+      thead
+        tr
+          th Id
+          th Nombre
+          th Puntaje
+      tbody
+        - @adopters.each do |adopter|
+          tr
+            td= link_to adopter.id, adopter_path(adopter)
+            td= adopter.name
+            td= adopter.score
