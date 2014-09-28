@@ -1,6 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'minitest/reporters'
 require 'shoulda/context'
 
 class ActiveSupport::TestCase
@@ -9,3 +10,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
+ActiveRecord::Base.logger = nil

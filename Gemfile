@@ -26,4 +26,5 @@ end
 
 group :test do
 	gem 'shoulda-context'
+  gem 'minitest-reporters'
 end
