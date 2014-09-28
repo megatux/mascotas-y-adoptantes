@@ -10,4 +10,29 @@ class AdopterTest < ActiveSupport::TestCase
       end
     end
   end
+
+  context "the Adopter.worse method" do
+    setup do
+      (1..10).each do |score|
+        Adopter.create(name: "name#{score}", description: "an adopter with score #{score}", score: score)
+      end
+      @all_adopters = Adopter.all
+      @worse_adopters = Adopter.worse(3)
+    end
+
+    should "get the n adopters" do
+      assert_equal 3, @worse_adopters.length
+    end
+
+    should "get existent adopters" do
+      assert_equal (@all_adopters - @worse_adopters).size, @all_adopters.size - 3
+    end
+
+    should "get the worse scored adopters" do
+      max_score = @worse_adopters.max{|a,b| a.score <=> b.score}.score
+      (@all_adopters - @worse_adopters).each do |adopter|
+        assert adopter.score >= max_score
+      end
+    end
+  end
 end
