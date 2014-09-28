@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  root 'adopters#index'
+  root 'home#show'
 
   resources :adopters
 end
